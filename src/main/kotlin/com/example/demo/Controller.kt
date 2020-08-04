@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RestController
 class Controller {
   
   @GetMapping("/")
-  fun index(): String {
-    return "index"
+  fun index(map: ModelMap): String {  
+        // Name of return template file, corresponding to src/main/resources/templates/index.html
+        return "index"
   }
 }
