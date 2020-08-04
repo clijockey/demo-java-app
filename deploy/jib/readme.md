@@ -135,4 +135,10 @@ How about inserting env variables?
 
 
 
-More options are detailed here. (https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin). The GCP guide is https://cloud.google.com/java/getting-started/jib
+More options are detailed here. (https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin). The GCP guide is https://cloud.google.com/java/getting-started/jib 
+
+### Cloud Build
+
+```
+gcloud builds submit --config deploy/jib/ci/cloud-build-jib.yaml
+```
