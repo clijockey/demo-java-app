@@ -2,7 +2,12 @@ package com.example.demo.web.exception;
 
 public class BookNotFoundException extends RuntimeException {
 
-    public BookNotFoundException() {
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public BookNotFoundException() {
         super();
     }
 

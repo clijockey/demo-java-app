@@ -2,7 +2,12 @@ package com.example.demo.web.exception;
 
 public class BookIdMismatchException extends RuntimeException {
 
-    public BookIdMismatchException() {
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public BookIdMismatchException() {
         super();
     }
 

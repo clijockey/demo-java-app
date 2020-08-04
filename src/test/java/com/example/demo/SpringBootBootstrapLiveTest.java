@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.persistence.model.Book;
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
@@ -11,8 +12,6 @@ import java.util.List;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-
-import com.baeldung.persistence.model.Book;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
