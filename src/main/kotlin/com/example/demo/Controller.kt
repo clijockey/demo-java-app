@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController
 class Controller {
   
   @GetMapping("/")
-  fun saySomething(): String {
-    return "Kotlin app on Cloud Run, containerized by Jib!"
+  fun index(): String {
+    return "index"
   }
 }
