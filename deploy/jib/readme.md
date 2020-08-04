@@ -1,7 +1,7 @@
 
 # Using jib to containerise Java Apps
 
-Jib is an open source Java tool maintained by Google to simplify the creation of Docker containers for your Java app without the need to create `dockerfiles` (in fact no need to have Java deamon installed to create or publish it). 
+[Jib](https://github.com/GoogleContainerTools/jib) is an open source Java tool maintained by Google to simplify the creation of Docker containers for your Java app without the need to create `dockerfiles` (in fact no need to have Java deamon installed to create or publish it). 
 
 You have the option of either using a Maven or Gradle plugin.
 
@@ -81,7 +81,7 @@ Output
 
 Then allows;
 ```
-mvn compile app:build
+mvn compile jib:build
 ```
 
 ### Customisation

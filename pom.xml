@@ -77,28 +77,29 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+			
 			<!-- Jib Plugin config -->
-			<plugin>
+		 	<plugin>
                <groupId>com.google.cloud.tools</groupId>
                <artifactId>jib-maven-plugin</artifactId>
-                <version>2.0.0</version>n>
-               <!-- <configuration>
+                <version>2.4.0</version>
+                <configuration>
                     <to>
-      					<image>gcr.io/PROJECT/IMAGE</image>
+      					<image>gcr.io/clijockey/demo-java-app-jib</image>
     				</to>
-					<from>                           
+					<!-- <from>                           
         				<image>openjdk:alpine</image>
-    				</from>
-    			<container>
+    				</from> -->
+    			<!--<container>
 	  				<ports>
             			<port>8082</port>
         			</ports>
       				<environment>
         				<ENV_VAR>VALUE</ENV_VAR>
       				</environment>
-    			</container> 
-               </configuration> -->
-           </plugin>
+    			</container> -->
+               </configuration> 
+           </plugin> 
 		</plugins>
 	</build>
 
