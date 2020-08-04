@@ -1,11 +1,547 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-    <p th:text="'Hello, ' + ${name} + '${host}' + '!'" />
-    <p>Welcome to <span th:text="${appName}">Our App</span></p>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>No 35 Harrogate</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom fonts for this theme -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css">
+    <link href="vendor/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css">
+    <link href="vendor/owl-carousel/owl.transitions.css" rel="stylesheet" type="text/css">
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="vendor/animate.css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="device-mockups/device-mockups.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this theme -->
+    <link href="css/coffee.css" rel="stylesheet" type="text/css">
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+          <img class="img-fluid" src="img/No35-White-Roundel.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+          Menu
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#values">Values</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#menu">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#hours">Hours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#people">People</a>
+            </li>
+    <!--        <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#press">Feedback</a> -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Masthead -->
+    <header class="masthead" style="background-image: url('img/nathan-dumlao-290152.jpg');">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-12 my-auto text-center text-white">
+            <img class="masthead-img img-fluid mb-3" src="img/No35-White-Logo-WithLocation.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="scroll-down">
+        <a class="btn js-scroll-trigger" href="#values">
+          <i class="fa fa-angle-down fa-fw"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- Values Section -->
+    <section class="page-section services" id="values">
+      <div class="container">
+        <div class="text-center wow fadeIn">
+          <h2>Our Values</h2>
+          <hr class="colored">
+          <p class="mb-0">We create the best tasting drinks available using artisan roasts and the finest blends, our snacks are also a taste sensation.</p>
+        </div>
+        <div class="row mt-4">
+          <!-- Service Item 1 -->
+          <div class="col-lg-4 wow fadeIn" data-wow-delay=".2s">
+            <div class="media">
+              <div class="pull-left">
+                <i class="fa fa-coffee rounded-circle"></i>
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Brews</h3>
+                <ul>
+                  <li>
+                    <em>Fresh and hand crafted</em>
+                  </li>
+                  <li>
+                    <em>Complex flavour profiles</em>
+                  </li>
+                  <li>
+                    <em>Select ingredients</em>
+                  </li>
+                  <li>
+                    <em>Tested for quality and taste</em>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Service Item 2 -->
+          <div class="col-lg-4 wow fadeIn" data-wow-delay=".4s">
+            <div class="media">
+              <div class="pull-left">
+                <i class="fa fa-cutlery rounded-circle"></i>
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Food</h3>
+                <ul>
+                  <li>
+                    <em>Our own secret recipes</em>
+                  </li>
+                  <li>
+                    <em>Fresh snacks and pastries</em>
+                  </li>
+                  <li>
+                    <em>Big favourites</em>
+                  </li>
+                  <li>
+                    <em>Taste tested by us</em>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Service Item 3 -->
+          <div class="col-lg-4 wow fadeIn" data-wow-delay=".6s">
+            <div class="media">
+              <div class="pull-left">
+                <i class="fa fa-users rounded-circle"></i>
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Community</h3>
+                <ul>
+                  <li>
+                    <em>Friendly environment</em>
+                  </li>
+                  <li>
+                    <em>Like minded individuals</em>
+                  </li>
+                  <li>
+                    <em>Customers treated like friends</em>
+                  </li>
+                  <li>
+                    <em>Sharing</em>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="call-to-action" style="background-image: url('img/nolan-issac-38299.jpg');">
+      <div class="container wow fadeIn">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <span class="quote">Coffee doesn't ask silly questions, coffee understands!</span>
+            <hr class="colored">
+            <a class="btn btn-primary js-scroll-trigger" href="#menu">Our Menu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Gallery -->
+    <section class="page-section" id="menu">
+      <div class="container wow fadeIn">
+        <div class="text-center">
+          <h2>Menu</h2>
+          <hr class="colored">
+          <p>Here is a selection of items from our menu. Please call in for our latest range.</p>
+        </div>
+        <div class="portfolio-gallery">
+          <div class="item">
+            <a href="img/kim-s-ly-187663.jpg" class="gallery-link" title="Espresso Based Drinks">
+              <img src="img/kim-s-ly-187663.jpg" class="img-fluid mx-auto" alt="">
+            </a>
+          </div>
+          <div class="item">
+            <a href="img/toa-heftiba-84799.jpg" class="gallery-link" title="Brownies">
+              <img src="img/toa-heftiba-84799.jpg" class="img-fluid mx-auto" alt="">
+            </a>
+          </div>
+          <div class="item">
+            <a href="img/gaelle-marcel-85387.jpg" class="gallery-link" title="Speciality Tea">
+              <img src="img/gaelle-marcel-85387.jpg" class="img-fluid mx-auto" alt="">
+            </a>
+          </div>
+          <div class="item">
+            <a href="img/kaley-dykstra-328993.jpg" class="gallery-link" title="Croissants">
+              <img src="img/kaley-dykstra-328993.jpg" class="img-fluid mx-auto" alt="">
+            </a>
+          </div>
+          <div class="item">
+            <a href="img/toa-heftiba-84799.jpg" class="gallery-link" title="Drip Coffee">
+              <img src="img/toa-heftiba-84799.jpg" class="img-fluid mx-auto" alt="">
+            </a>
+          </div>
+          <div class="item">
+            <a href="img/manki-kim-269196.jpg" class="gallery-link" title="Coffee Beans">
+              <img src="img/manki-kim-269196.jpg" class="img-fluid mx-auto" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section class="page-section pricing" id="hours" style="background-image: url('img/blake-richard-verdoorn-18687.jpg')">
+      <div class="container wow fadeIn">
+        <div class="text-center">
+          <h1>Opening Times</h1>
+          <hr class="colored">
+          <p>We serve coffee, tea and lovely treats every day of the week.</p>
+        </div>
+        <!-- <div class="row"> -->
+
+
+          <!-- Coming Soon -->
+          <!-- <div class="col-md-6"> -->
+            <div class="pricing-item">
+              <h2>Hours</h2>
+              <hr class="colored-white">
+              <ul class="list-group">
+                <li class="list-group-open">
+                  <h4>
+                    Mon - Thu: 7am - 6pm
+                  </h4>
+                </li>
+                <li class="list-group-open">
+                  <h4>
+                    Fri: 7am - 6pm
+                  </h4>
+                </li>
+                <li class="list-group-open">
+                  <h4>
+                    Sat: 7am - 6pm
+                  </h4>
+                </li>
+                <li class="list-group-open">
+                  <h4>
+                    Sun: 8am - 3pm
+                  </h4>
+                </li>
+              </ul>
+              <hr class="colored-white">
+              <a href="#" class="btn btn-secondary">Coming Soon</a>
+            </div>
+          <!-- <</div> -->
+
+        <!-- </div> -->
+      </div>
+    </section>
+
+    <!-- People Section -->
+    <section class="page-section bg-light" id="people">
+      <div class="container text-center wow fadeIn">
+        <h2>People</h2>
+        <p class="mb-0">We are a group of very passionate coffee and tea lovers.</p>
+        <hr class="colored">
+        <div class="team-carousel owl-carousel owl-theme mt-4">
+
+          <!-- Team Carousel Item 1 -->
+          <div class="item">
+            <div class="overlay"></div>
+            <img class="img-fluid" src="img/people/1.jpg" alt="">
+            <div class="team-caption">
+              <h3>Jamie</h3>
+              <hr class="colored">
+              <em>Co-owner</em>
+              <ul class="list-inline list-team-social">
+                <!-- <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-facebook fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-linkedin fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-envelope-o fa-fw"></i>
+                  </a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+
+          <!-- Team Carousel Item 2 -->
+          <div class="item">
+            <div class="overlay"></div>
+            <img class="img-fluid" src="img/people/2.jpg" alt="">
+            <div class="team-caption">
+              <h3>Nino</h3>
+              <hr class="colored">
+              <em>Co-owner</em>
+              <ul class="list-inline list-team-social">
+                <!-- <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-facebook fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-linkedin fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-envelope-o fa-fw"></i>
+                  </a> -->
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Team Carousel Item 3 -->
+          <div class="item">
+            <div class="overlay"></div>
+            <img class="img-fluid" src="img/people/rob.jpg" alt="">
+            <div class="team-caption">
+              <h3>Rob</h3>
+              <hr class="colored">
+              <em>Co-owner</em>
+              <ul class="list-inline list-team-social">
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-twitter fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-instagram fa-fw"></i>
+                  </a>
+                </li>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup Call to Action -->
+    <section class="page-section signup-form bg-inverse text-white">
+      <div class="container text-center">
+        <h3 class="m0">Subscribe to our newsletter!</h3>
+        <hr class="colored">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <!-- MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+              <!-- Replace the form action in the line below with your MailChimp embed action! Visit the documentation for additional instructions! -->
+              <form action="//coffee.us16.list-manage.com/subscribe/post?u=eeb2f0dd16d291a3e5e49d231&amp;id=691a184cc1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div class="input-group input-group-lg">
+                  <input type="email" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="Email address...">
+                  <span class="input-group-btn">
+                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">Subscribe</button>
+                  </span>
+                </div>
+                <div id="mce-responses">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+              </form>
+            </div>
+            <!-- End MailChimp Signup Form -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Press Section -->
+    <!-- <section class="page-section testimonials" id="press">
+      <div class="container wow fadeIn">
+        <h2>Customer Feedback</h2>
+        <hr class="colored">
+        <p class="mb-4">Here's what our customers are saying.</p>
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div class="testimonials-carousel">
+              <!-- Testimonial Item 1 -->
+        <!--      <div class="item mb-4">
+                <p class="lead">"A unique blend of flavors."</p>
+                <hr class="colored">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, temporibus, laborum, dignissimos doloremque corporis alias nostrum recusandae culpa id quisquam harum impedit sed sunt non obcaecati vero ipsam aut fugit?</p>
+                <div class="testimonial-img">
+                  <img class="rounded-circle img-fluid" src="img/agency/testimonials/1.jpg" alt="">
+                </div>
+                <div class="testimonial-author">
+                  <span class="name">Jim Walker</span>
+                  <p class="small">Coffee Snob</p>
+                  <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial Item 2 -->
+     <!--         <div class="item mb-4">
+                <p class="lead">"Some of the best brownies I have ever tasted."</p>
+                <hr class="colored">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem amet rem minus dolorum, facere in soluta explicabo, unde eveniet illo vel, nemo nostrum atque nesciunt facilis quaerat quasi reprehenderit dicta.</p>
+                <div class="testimonial-img">
+                  <img class="rounded-circle img-fluid" src="img/agency/testimonials/2.jpg" alt="">
+                </div>
+                <div class="testimonial-author">
+                  <span class="name">Ashley Creadle</span>
+                  <p class="small">Regular Customer</p>
+                  <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer" style="background-image: url('img/bo-smith-33504.jpg')">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-4 footer-contact-details">
+            <h4>
+              <i class="fa fa-mobile"></i>
+              Mobile App</h4>
+            <p>Coming Soon</p>
+          </div>
+          <div class="col-md-4 footer-contact-details">
+            <h4>
+              <i class="fa fa-map-marker"></i>
+              Location</h4>  
+            <p>35 Cheltenham Crescent
+              <br>Harrogate
+              <br>North Yorkshire  
+              <br>HG1 1DH</p>
+          </div>
+          <div class="col-md-4 footer-contact-details">
+            <h4>
+              <i class="fa fa-envelope"></i>
+              Email</h4>
+            <p>
+              <a href="mailto:barista@no35harrogate.coffee">barista@no35harrogate.coffee</a>
+            </p>
+          </div>
+        </div>
+        <div class="row footer-social">
+          <div class="col-lg-12">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/no35harrogate/">
+                  <i class="fa fa-facebook fa-fw fa-2x"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/no35harrogate/">
+                  <i class="fa fa-instagram fa-fw fa-2x"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://twitter.com/no35harrogate">
+                  <i class="fa fa-twitter fa-fw fa-2x"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="copyright">&copy; N<sup>o</sup> 35 Harrogate</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="vendor/owl-carousel/owl.carousel.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="vendor/vide/jquery.vide.min.js"></script>
+    <script src="vendor/mixitup/mixitup.min.js"></script>
+    <script src="vendor/wowjs/wow.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/contact_me.js"></script>
+    <script src="js/jqBootstrapValidation.js"></script>
+
+    <!-- Custom scripts for this theme -->
+    <script src="js/vitality.js"></script>
+
+
+  </body>
+
 </html>
