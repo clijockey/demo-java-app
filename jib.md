@@ -16,7 +16,7 @@ To run this demo it assumes you have;
 * clone the repo in a place you can run Maven commands
 * have authenticated to you container registry  
 
-If you have not already done the above steps;
+If you have not already set up for enviroment for the correct GCP project or GCR do the following;
 
 ```
 gcloud auth list
@@ -29,34 +29,33 @@ gcloud services enable containerregistry.googleapis.com
 ## Demo
 
 [optional] What does the app look like;
-```
+```java
 ./mvnw -DskipTests spring-boot:run
 ```
+Now browse to [http://localhost:8080](http://localhost:8080), you should see a great ☕ based app.
 
-```
+So you know the app compiles and works as wanted so you now want to containerise the app and put it in the container registry;
+
+```bash
 ./mvnw com.google.cloud.tools:jib-maven-plugin:1.8.0:build \
-    -Dimage=gcr.io/$GOOGLE_CLOUD_PROJECT/demo-java-app-jib
-```
-```
-    mvn compile com.google.cloud.tools:jib-maven-plugin:2.0.0:build \
-    -Dimage=gcr.io/PROJECT/IMAGE
+    -Dimage=gcr.io/$PROJECT_ID/demo-java-app-jib
 ```
 
 Output
-```
-[INFO] Built and pushed image as gcr.io/PROJECT_ID/demo-java-app-jib
+```bash
+[INFO] Built and pushed image as gcr.io/$PROJECT_ID/demo-java-app-jib
 ...
 [INFO] BUILD SUCCESS
 ```
- Cloud Console (https://console.cloud.google.com/), click on the navigation menu button, and select Container Registry on the left panel. You should now see your image has been pushed.
-
- You can now deploy your container in which ever way you prefer (K8s, Cloud Run etc.)
+Great, you should see your image in the container registry - in the Google console browse to `Container Registry` page and have a look. 
+ 
+You can now deploy your container in which ever way you prefer (K8s, Cloud Run etc.)
 
  ### Extended
 
  You can help shorten the command by configuring the plugin in the `pom.xml`;
 
- ```
+ ```xml
  <project>
     ...
     <build>
@@ -91,8 +90,8 @@ By default Jib will assume reasonable config for the container image (e.g FROM, 
 Lets say you don't want to use port 8080 and need to use 8082. 
 
 
-```
-configuration>
+```xml
+<configuration>
     ...
     <container>
         <ports>
@@ -104,7 +103,7 @@ configuration>
 
 Or what about using a prefered base image - by default you will use Googles distroless image (https://github.com/GoogleContainerTools/distroless/tree/master/java)
 
-```
+```xml
 <configuration>
     ...
     <from>                           
@@ -115,7 +114,7 @@ Or what about using a prefered base image - by default you will use Googles dist
 ```
 
 How about inserting env variables? 
-```
+```xml
 <plugin>
   <groupId>com.google.cloud.tools</groupId>
   <artifactId>jib-maven-plugin</artifactId>
@@ -133,12 +132,13 @@ How about inserting env variables?
 </plugin>
 ```
 
-
-
 More options are detailed here. (https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin). The GCP guide is https://cloud.google.com/java/getting-started/jib 
 
 ### Cloud Build
 
-```
+Lets be honest most devs should be pushing code to a git repo and letting automation take care of building, test etc. Lets set this up in Cloud Build;
+
+```bash
 gcloud builds submit --config deploy/jib/ci/cloud-build-jib.yaml
 ```
+Browse to Cloud Build.
