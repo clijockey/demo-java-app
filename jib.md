@@ -24,6 +24,8 @@ gcloud config list project
 gcloud config set project <PROJECT_ID>
 gcloud services enable containerregistry.googleapis.com
 
+gcloud auth configure-docker
+
 ```
 
 ## Demo
@@ -47,7 +49,16 @@ Output
 ...
 [INFO] BUILD SUCCESS
 ```
-Great, you should see your image in the container registry - in the Google console browse to `Container Registry` page and have a look. 
+Great, you should see your image in the container registry - in the Google console browse to `Container Registry` page and have a look. The build is done due to the Jib dependancy being added into `pom.xml`;
+
+```xml
+<!-- Jib Plugin config -->
+		 	<plugin>
+               <groupId>com.google.cloud.tools</groupId>
+               <artifactId>jib-maven-plugin</artifactId>
+                <version>2.4.0</version>
+           </plugin> 
+```
  
 You can now deploy your container in which ever way you prefer (K8s, Cloud Run etc.)
 
