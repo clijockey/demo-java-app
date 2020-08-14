@@ -1,6 +1,6 @@
-substitutions:
-  # _IMAGE_NAME: demo-java-app-jib # Configure this
-  _GCS_CACHE_BUCKET: rob #clijockey-cloudbuild-cache
+# substitutions:
+#   # _IMAGE_NAME: demo-java-app-jib # Configure this
+#   _GCS_CACHE_BUCKET: rob #clijockey-cloudbuild-cache
 
 steps:
 
@@ -29,19 +29,19 @@ steps:
     path: /root/.m2/
 
 # cache the /root/.m2 folder and upload it to GCS bucket
-- name: gcr.io/cloud-builders/gsutil
-  waitFor:
-  - build
-  dir: /root
-  entrypoint: bash
-  args:
-  - -c
-  - |
-    tar -czf /tmp/m2-cache.tar.gz .m2 &&
-    gsutil cp /tmp/m2-cache.tar.gz gs://${_GCS_CACHE_BUCKET}/m2-cache.tar.gz
-  volumes:
-  - name: m2
-    path: /root/.m2/
+# - name: gcr.io/cloud-builders/gsutil
+#   waitFor:
+#   - build
+#   dir: /root
+#   entrypoint: bash
+#   args:
+#   - -c
+#   - |
+#     tar -czf /tmp/m2-cache.tar.gz .m2 &&
+#     gsutil cp /tmp/m2-cache.tar.gz gs://${_GCS_CACHE_BUCKET}/m2-cache.tar.gz
+#   volumes:
+#   - name: m2
+#     path: /root/.m2/
 
 # deploy to GKE
 # - name: 'gcr.io/cloud-builders/gke-deploy:stable'
