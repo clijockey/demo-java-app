@@ -13,8 +13,8 @@ Compared to Jib;
 
 ## Prereq
 To run this demo it assumes you have;
-    * cloned the repo in a place you can run Maven commands
-    * have authenticated to you container registry  
+* cloned the repo in a place you can run Maven commands
+* have authenticated to you container registry  
 
 If you have not already done the above steps;
 
