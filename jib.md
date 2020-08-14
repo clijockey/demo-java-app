@@ -6,14 +6,14 @@
 You have the option of either using a Maven or Gradle plugin.
 
 Traditional Dockerfile approach;
-[](https://cloud.google.com/java/images/docker_build_flow.png)
+![](https://cloud.google.com/java/images/docker_build_flow.png)
 
 Compared to Jib;
-[](https://cloud.google.com/java/images/jib_build_flow.png)
+![](https://cloud.google.com/java/images/jib_build_flow.png)
 
 ## Prereq
 To run this demo it assumes you have;
-* cloned the repo in a place you can run Maven commands
+* clone the repo in a place you can run Maven commands
 * have authenticated to you container registry  
 
 If you have not already done the above steps;
