@@ -21,7 +21,7 @@ If you have not already set up for enviroment for the correct GCP project or GCR
 ```
 gcloud auth list
 gcloud config list project
-gcloud config set project <PROJECT_ID>
+gcloud config set project $PROJECT_ID
 gcloud services enable containerregistry.googleapis.com
 
 gcloud auth configure-docker
@@ -60,6 +60,8 @@ Great, you should see your image in the container registry - in the Google conso
 </plugin> 
 ```
  
+If you want to have a look at the container image then use dive - `dive gcr.io/$PROJECT_ID/demo-java-app-jib`
+
 You can now deploy your container in which ever way you prefer (K8s, Cloud Run etc.)
 
  ### Extended
@@ -150,6 +152,6 @@ More options are detailed here. (https://github.com/GoogleContainerTools/jib/tre
 Lets be honest most devs should be pushing code to a git repo and letting automation take care of building, test etc. Lets set this up in Cloud Build;
 
 ```bash
-gcloud builds submit --config deploy/jib/ci/cloud-build-jib.yaml
+gcloud builds submit --config ci/cloud-build-jib.yaml
 ```
 Browse to Cloud Build.
