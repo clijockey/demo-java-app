@@ -10,6 +10,7 @@
 docker rmi -f $(docker images -a -q)
 ```
 * `pack set-default-builder gcr.io/buildpacks/builder:v1`
+* Environment varaibales listed in `.envrc-example`  
 
 
 ## To the demo
@@ -18,13 +19,13 @@ docker rmi -f $(docker images -a -q)
 
 I have finished writing/adding to my app and now I want to create a container. We will use Cloud Native buildpacks, which makes use of a CLI tool called `pack`.
 
-Lets just run it locally to check everything is as expected - `./mvnw -DskipTests spring-boot:run`
+Lets just run it locally to check everything is as expected - `./mvnw -DskipTests spring-boot:run` (yes I am a bad human for skipping tests)
 
 ```bash
 pack build eu.gcr.io/$PROJECT_ID/coffee:v1
 ```
 
-This will now create the container image;
+This will now create the container image.
 
 In the detection phase, we see that the builder automatically detects which buildpacks to use:
 
@@ -138,14 +139,9 @@ Lets make some changes to the app, and this time we will also publish the contai
 pack build --publish eu.gcr.io/$PROJECT_ID/coffee:v2
 ```
 
-Speedy re-build
-Notice that the build is faster the second time. A few factors contribute to this:
-
-The builder and run (stack) images are now available in the local Docker repository
-
-Even though we made a change to our app code, the build was able to re-use layers from the app image and from cache (pay special attention to the logs for the restoring, analyzing, and exporting phases). Building a layered image enables pack to efficiently recreate only the layers that have changed.
-
-Validate that the image was updated (the image id has changed):
+You should notice the build is a bit faster;
+* The builder and run (stack) images are now available in the local Docker repository
+* Even though we made a change to our app code, the build was able to re-use layers from the app image and from cache (pay special attention to the logs for the restoring, analyzing, and exporting phases). Building a layered image enables pack to efficiently recreate only the layers that have changed.
 
 Notice the reusing layers, time to build etc...
 
@@ -243,6 +239,8 @@ Successfully built image eu.gcr.io/clijockey/coffee:v2
 dive eu.gcr.io/$PROJECT_ID/coffee:v2
 ```
 
+Lets say I needed to control the JVM version, this is possible with envvars, in this case you can pass `GOOGLE_RUNTIME_VERSION`. More exist in the documentation - this build will fail becuase the app is designed for Java 11! 
+
 ```bash
 pack build --publish eu.gcr.io/$PROJECT_ID/coffee:v8 --env GOOGLE_RUNTIME_VERSION="8"
 ```
@@ -255,6 +253,7 @@ pack build --publish eu.gcr.io/$PROJECT_ID/coffee:v8 --env GOOGLE_RUNTIME_VERSIO
 
 ### Operations View
 
+Great, the devs are happy but whats in it for the ops folks?
 
 pack provides a way to inspect our app image;
 
@@ -293,13 +292,14 @@ Processes:
 
 
 ```
-You can see the run image and the buildpacks used to create the app image. What if you want to influence the build by adding a few instructions? One option is to add a custom buildpack.
+
+A bill of materials also exists to help with audit.
 
 ```
-bom
+pack inspect-image eu.gcr.io/$PROJECT_ID/coffee:v2 --bom | jq .
 ```
 
-Since buildpacks are modular and pluggable, we can contribute our own custom buildpacks to the build or use another one thats been created. 
+Since buildpacks are modular and pluggable, we can contribute our own custom buildpacks to the build or use another one that exists. 
 
 Lets create the image with a different builder and see what that looks like;
 
@@ -322,6 +322,7 @@ pack inspect-image eu.gcr.io/$PROJECT_ID/coffee:cf --bom | jq .
 
 You can alter the default builders with  `pack set-default-builder gcr.io/buildpacks/builder:v1`
 
+#### Rebase is WIP
 
 ```bash
 # Change layer/rebase
