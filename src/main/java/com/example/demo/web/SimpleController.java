@@ -16,4 +16,10 @@ public class SimpleController {
         model.addAttribute("appName", appName);
         return "home";
     }
+
+    @RequestMapping("/rob")
+    public String robPage(Model model) {
+        model.addAttribute("appName", appName);
+        return "home";
+    }
 }
